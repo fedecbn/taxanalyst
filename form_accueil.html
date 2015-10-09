@@ -1,0 +1,58 @@
+<?php	
+//récupération des paramètres de connexion
+	include "../base_connexion.php";
+	$connexion = "host=".$host." user=".$user." port=".$port." dbname=".$bdd." password=".$dbpass;	
+	$connexion2 = "host=".$host2." user=".$user2." port=".$port2." dbname=".$bdd2." password=".$dbpass2;	
+	require "query_bdd.php"; 
+?>
+
+<?php
+/*//récupération du nombre de taxon dans TaxRef
+	$query = "SELECT * FROM 
+	(
+	SELECT 'v7' as version, count (ogc_fid) as nb_taxon FROM taxrefv70_utf8
+	UNION
+	SELECT 'v6' as version, count (ogc_fid) as nb_taxon FROM taxrefv60_utf8
+	UNION
+	SELECT 'v5' as version, count (ogc_fid) as nb_taxon FROM taxrefv50_utf8
+	UNION
+	SELECT 'v4' as version, count (ogc_fid) as nb_taxon FROM taxrefv40_utf8
+	UNION
+	SELECT 'v3' as version, count (ogc_fid) as nb_taxon FROM taxrefv30_utf8
+	) as nb_taxon
+	ORDER BY version;";
+    $table = query_bdd($connexion,$query,2);		//$table est un tableau de tableaux. chaque "case correspond à la liste de toutes les valeur d'un attribut
+	$num_version = $table[0];						//récupération des listes de valeur par attribut de la requête
+	$nb_taxon = $table[1];						//récupération des listes de valeur par attribut de la requête
+	$nb_version = count($num_version);
+	*/
+	?> 
+
+ <div id="container" style="width: 100%; height: 400px">
+    Cette application web vous permettra de <BR>
+	- faire le suivi des taxons dans les différentes versions de TaxRef à partir de son code nom (CD_NOM).<BR>
+	- laire une première analyse de l'agrégation des catalogues territoriaux du réseau<BR>
+
+	
+	<BR><u>Si vous souhaitez faire le suivi d'un CD NOM dans TAXREF</u>, 
+	<li>sélectionnez l'onglet <b>"Suivi Taxon TAXREF"</b>, 
+	<li>entrez le cd_nom du taxon que vous souhaitez suivre, 
+	<li>sélectionnez les paramètres à afficher, 
+	<li>et cliquez sur OK
+	<BR><BR>
+	<u>Si vous souhaitez rechercher des information issus du TAXA</u>,
+	<li>sélectionnez l'onglet <b>"TAXA - Catalogues CBN"</b>, 
+	<li>entrez une partie du nom scientifique, 
+	<li>selectionnez le taxon voulu
+	<BR><BR>
+	Accédez également à la <u>liste des taxons qui n'ont pas été rattachés à TAXREF à travers l'onglet "Taxons non rattachés"</u><BR><BR>
+	Cette application web est loin d'être parfaite et pourrait être améliorée. Si vous avez une remarque ou souhaitez que nous y apportions une évolution, merci de me contacter par mail : <u>thomas.milon[at]fcbn.fr</u>
+
+</div> 
+
+
+
+
+
+
+

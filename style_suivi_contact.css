@@ -1,0 +1,211 @@
+﻿/*Général*/
+   a.bulle {
+     position:relative;
+     color:#396a86;
+     text-decoration:none;
+     font-family:arial, verdana, sans-serif;
+     text-align:center;
+     font-size:11px;
+   }
+   
+   a.bulle:hover {
+      background: none;
+      z-index: 50;
+   }
+   
+   a.bulle span {
+     display: none;
+   }
+   
+   a.bulle:hover span {
+      display: block;
+      position: absolute;
+	  border: 1px solid #00885A;
+      top: -700px;
+   }
+   
+#main{
+  margin: 0% 5% 0% 5%;
+  padding: 20px;
+  border: 1px solid #00885A;
+  background: #ffffff;
+}
+#entete{
+  height: 60px;
+  background-repeat : no-repeat;
+  background-position : left center;
+ }
+ 
+ #intro{
+  height: 30px;
+  margin-left:130px;
+  padding-top:10px;
+  }
+ 
+#onglet{
+  position: absolute;
+  right: 10%;
+  top: 44px;
+}
+#titre{
+	color: #000000;
+	background-color : #ffffff;
+	padding : 5 5 5 5;
+    font-size: 30px;
+    font-weight: bold;
+}
+h1 {
+ font-size:125%;
+ color: #0000C7; 
+}
+
+h3 {
+ font-size:125%;
+ color: #00885A; 
+}
+
+#form {
+    padding-bottom: 10px;
+}
+
+/*Gestion des onglets*/
+ul#tabnav {
+    font: bold 11px verdana, arial, sans-serif;
+    list-style-type: none;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #00885A;
+    margin: 0;
+}
+
+ul#tabnav li {
+    float: left;
+    height: 21px;
+    background-color: #68F9C7;
+    margin: 2px 2px 0 2px;
+    border: 1px solid #00885A;
+}
+
+#tabnav li {
+    margin: 0;
+    padding: 0;
+    display: inline;
+    list-style-type: none;
+}
+
+ul#tabnav li.active {
+    border-bottom: 1px solid #fff;
+    background-color: #fff;
+}
+
+#tabnav a {
+    float: left;
+    display: block;
+    color: #00885A;
+    text-decoration: none;
+    padding: 4px;
+}
+
+#tabnav a:hover {
+    background: #fff;
+}
+
+#tabnav a:link, #tabnav a:visited {
+    float: left;
+    font-size: 15px;
+    line-height: 14px;
+    font-weight: bold;
+    margin: 0 10px 4px 10px;
+    text-decoration: none;
+    color: #00885A;
+}
+
+/*Tableaux de présentation (souvent pour les réusltats)*/
+table#prez {
+border: medium solid #000000;
+width: 100%;
+}
+
+table#prez td{
+font-family: sans-serif;
+border: thin solid #00885A;
+font-size: small;
+padding: 5px;
+text-align: center;
+background-color: #ffffff;
+vertical-align:center
+}
+
+/*Tableaux de présentation (souvent pour les réusltats)*/
+table#prez2 {
+border: medium solid #000000;
+width: 100%;
+}
+
+table#prez2 td{
+font-family: sans-serif;
+border: thin solid #6495ed;
+font-size: x-small;
+padding: 1px;
+text-align: center;
+background-color: #ffffff;
+vertical-align:center
+}
+
+/* Tableaux généraux*/
+#tabs th { border:1px solid #ccc; padding:10px; }
+#tabs td { border:1px solid #ccc; padding:10px; }
+
+/*bandeau de connexion*/
+#connexion {
+  position: absolute;
+  left: 130px;
+  top: 30px;
+}
+
+/*Calendrier*/
+.ds_box {
+	background-color: #FFF;
+	border: 1px solid #000;
+	position: absolute;
+	z-index: 32767;
+}
+
+.ds_tbl {
+	background-color: #FFF;
+}
+
+.ds_head {
+	background-color: #333;
+	color: #FFF;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	text-align: center;
+	letter-spacing: 2px;
+}
+
+.ds_subhead {
+	background-color: #CCC;
+	color: #000;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	width: 32px;
+}
+
+.ds_cell {
+	background-color: #EEE;
+	color: #000;
+	font-size: 13px;
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 5px;
+	cursor: pointer;
+}
+
+.ds_cell:hover {
+	background-color: #F3F3F3;
+} /* This hover code won't work for IE */
+
+

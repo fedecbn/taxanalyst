@@ -1,0 +1,54 @@
+  <!-- CSS autocompletion*/ -->
+<LINK rel="stylesheet" type="text/css" href="css/autocomp.css">
+<?php
+ /*récupération des paramètres de connexion*/
+include "../base_connexion.php";
+$connexion = "host=".$host." user=".$user." port=".$port." dbname=".$bdd." password=".$dbpass;	
+$connexion2 = "host=".$host2." user=".$user2." port=".$port2." dbname=".$bdd5." password=".$dbpass2;	
+require_once "query_bdd.php";
+  
+			/*Pas de référentiel partagé*/
+			$query = "SELECT nom_valide_taxon_mere as \"Nom taxon mère\",
+	string_agg(DISTINCT libelle_source_taxa, '<BR>') as Source, 
+	string_agg(DISTINCT remarque_taxon_mere, '<BR>') as Remarque,
+	string_agg(DISTINCT code_rang_taxon_mere, '<BR>') as Rang
+			FROM taxa.taxon_taxa tt  
+			LEFT OUTER JOIN taxa.coor_taxon_reftaxo ctr ON ctr.id_taxa_fcbn = tt.id_taxa_fcbn
+			LEFT OUTER JOIN taxa.source_taxa st ON st.code_source_taxa = tt.code_source_taxa
+			LEFT OUTER JOIN taxa.coor_source_collaborateur csc ON csc.source_taxa = st.code_source_taxa
+			LEFT OUTER JOIN taxa.liste_collaborateur_taxa lct ON lct.code_collaborateur_source_taxa = csc.id_collaborateur_source_taxa
+			LEFT OUTER JOIN taxa.classification c ON tt.id_taxa_fcbn = c.id_taxa_fcbn_taxon_taxa
+			WHERE id_rattachement_referentiel = 'AUCUN' AND st.code_source_taxa LIKE 'TAXA%'
+			GROUP BY \"Nom taxon mère\"
+			ORDER BY \"Nom taxon mère\"";
+			//echo $query;
+			$nb_param = 4; // nombre de paramètre de sortie
+			$table = query_bdd($connexion2,$query,$nb_param );		//$table est un tableau de tableaux. chaque "case correspond à la liste de toutes les valeur d'un attribut
+
+			if (isset($table))
+				{
+				if (empty($table)) 
+					{
+					echo "Aucun taxon n'a été trouvé dans TaxRef_change avec ce cd nom<BR>";
+					}
+				else
+					{
+					$nb_modif = count($table[0]);
+					
+					if ($nb_modif != 0)
+						{
+						echo "<h3>Liste des taxons non rattachés à TAXREF V5 issus de l'agrégation des catalogues du TAXA</h3>";
+						echo "<TABLE id = 'prez'><TR><TD><b>Nom taxon mère</b></TD><TD><b>Source(s)</b></TD><TD><b>Remarques</b></TD><TD><b>Rang</TD></TR>";
+						for ($j=0; $j<$nb_modif; $j++)
+							{
+							echo "<TR>";
+							For ($k=0; $k<$nb_param ; $k++)
+								{
+								echo "<TD>".$table[$k][$j]."</TD>";
+								}
+							echo "</TR>";
+							}
+						echo "<TABLE>";
+						}
+					}
+				}

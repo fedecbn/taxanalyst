@@ -1,0 +1,38 @@
+﻿input[type="submit"] {
+margin-left: 10px;
+width: 50px; height: 26px;
+}
+#search {
+padding: 2px 4px;
+width: 350px; height: 22px;
+border: 1px solid #AAA;
+}
+#search:hover, #search:focus {
+border-color: #777;
+}
+#results {
+display: none;
+width: 350px;
+border: 1px solid #AAA;
+border-top-width: 0;
+background-color: #FFF;
+margin-left:190;
+}
+#results div {
+width: 350px;
+padding: 2px 4px;
+text-align: left;
+border: 0;
+background-color: #FFF;
+
+}
+#results div:hover, .result_focus {
+background-color: #DDD !important;
+} 
+
+/*Tableaux de présentation (souvent pour les réusltats)*/
+table#prez {
+border: medium solid #000000;
+width: 100%;
+}
+
