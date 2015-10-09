@@ -67,40 +67,38 @@ if (isset($_POST["search"]))
 	$vide = tableau($connexion2,$select_region,$param,$titre,$vide); /*produit le tableau et retour $vide++ si pas de réponse"*/
 	
 	/*Carto*/
-	$cd_ref = $out1[0];
-	$URL = URL_carte($input,$out1[0]);
-	// var_dump($URL);echo "<BR>";
-	foreach($URL as $key => $value)
-		{
-		// echo "<a href=\"#\" class=\"bulle\"><img src=\"".$value['thumb']."\"  alt=\"Pas de carte disponible\" title=\"Carte de carte $key régional de $nom_taxon\" style=\"border: 1px solid #00885A;\" /><span><img src=\"".$value['normal']."\" alt=\"Pas de carte $key disponible\" title=\"Carte $key régional de $nom_taxon\" /></span></a>";
-		if (!file_exists("cartes/".$key."_".$cd_ref.".jpg") OR filesize("cartes/".$key."_".$cd_ref.".jpg") == 0)
-			{
-			// echo $value['normal']."<BR>";
-			$img = file_get_contents($value['normal']);
-			file_put_contents("cartes/".$key."_".$cd_ref.".jpg",$img);
-			if (filesize("cartes/".$key."_".$cd_ref.".jpg") == 0)
-				{
-				unlink("cartes/".$key."_".$cd_ref.".jpg",$img);
-				sleep(3);
-				$img = file_get_contents($value['normal']);
-				file_put_contents("cartes/".$key."_".$cd_ref.".jpg",$img);
-				}
-			}
-		if (!file_exists("cartes/".$key."_".$cd_ref.".thumb.jpg") OR filesize("cartes/".$key."_".$cd_ref.".thumb.jpg") == 0)
-			{
-			$img_thumb = file_get_contents($value['thumb']);
-			unlink("cartes/".$key."_".$cd_ref.".thumb.jpg",$img);
-			file_put_contents("cartes/".$key."_".$cd_ref.".thumb.jpg",$img_thumb);
-			if (filesize("cartes/".$key."_".$cd_ref.".thumb.jpg") == 0)
-				{
-				unlink("cartes/".$key."_".$cd_ref.".thumb.jpg",$img);
-				sleep(3);
-				$img_thumb = file_get_contents($value['thumb']);
-				file_put_contents("cartes/".$key."_".$cd_ref.".thumb.jpg",$img_thumb);
-				}
-			}
-		echo "<a href=\"#\" class=\"bulle\"><img src=\"cartes/".$key."_".$cd_ref.".thumb.jpg\"  alt=\"Pas de carte disponible\" title=\"Carte de carte $key régional de $nom_taxon\" style=\"border: 1px solid #00885A;\" /><span><img src=\"cartes/".$key."_".$cd_ref.".jpg\" alt=\"Pas de carte $key disponible\" title=\"Carte $key régional de $nom_taxon\" /></span></a>";
-		}
+	// $cd_ref = $out1[0];
+	// $URL = URL_carte($input,$out1[0]);
+	// foreach($URL as $key => $value)
+		// {
+		// /* echo "<a href=\"#\" class=\"bulle\"><img src=\"".$value['thumb']."\"  alt=\"Pas de carte disponible\" title=\"Carte de carte $key régional de $nom_taxon\" style=\"border: 1px solid #00885A;\" /><span><img src=\"".$value['normal']."\" alt=\"Pas de carte $key disponible\" title=\"Carte $key régional de $nom_taxon\" /></span></a>";*/
+		// if (!file_exists("cartes/".$key."_".$cd_ref.".jpg") OR filesize("cartes/".$key."_".$cd_ref.".jpg") == 0)
+			// {
+			// $img = file_get_contents($value['normal']);
+			// file_put_contents("cartes/".$key."_".$cd_ref.".jpg",$img);
+			// if (filesize("cartes/".$key."_".$cd_ref.".jpg") == 0)
+				// {
+				// unlink("cartes/".$key."_".$cd_ref.".jpg",$img);
+				// sleep(3);
+				// $img = file_get_contents($value['normal']);
+				// file_put_contents("cartes/".$key."_".$cd_ref.".jpg",$img);
+				// }
+			// }
+		// if (!file_exists("cartes/".$key."_".$cd_ref.".thumb.jpg") OR filesize("cartes/".$key."_".$cd_ref.".thumb.jpg") == 0)
+			// {
+			// $img_thumb = file_get_contents($value['thumb']);
+			// unlink("cartes/".$key."_".$cd_ref.".thumb.jpg",$img);
+			// file_put_contents("cartes/".$key."_".$cd_ref.".thumb.jpg",$img_thumb);
+			// if (filesize("cartes/".$key."_".$cd_ref.".thumb.jpg") == 0)
+				// {
+				// unlink("cartes/".$key."_".$cd_ref.".thumb.jpg",$img);
+				// sleep(3);
+				// $img_thumb = file_get_contents($value['thumb']);
+				// file_put_contents("cartes/".$key."_".$cd_ref.".thumb.jpg",$img_thumb);
+				// }
+			// }
+		// echo "<a href=\"#\" class=\"bulle\"><img src=\"cartes/".$key."_".$cd_ref.".thumb.jpg\"  alt=\"Pas de carte disponible\" title=\"Carte de carte $key régional de $nom_taxon\" style=\"border: 1px solid #00885A;\" /><span><img src=\"cartes/".$key."_".$cd_ref.".jpg\" alt=\"Pas de carte $key disponible\" title=\"Carte $key régional de $nom_taxon\" /></span></a>";
+		// }
 		
 
 	/*NIVEAU DÉPARTEMENTAL*/
