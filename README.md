@@ -10,7 +10,7 @@ Il vous faut un serveur web et une base de données postgresql.
 5. paramétrez le fichiers de configuration connect.inc.php à partir de connect.inc.example.php pour accéder à cette base.
 
 # Maintenance
-Il est possible d'ajouter des nouvelles version de taxref. Dans ce cas, 
+Il est possible d'ajouter des nouvelles version de taxref. Dans ce cas :
+
 1. Créez les tables et insérez les données nécessaire (ex/ taxref v9)
 2. Modifiez le fichier "include/lookup_cd_nom.php" en fonction
-

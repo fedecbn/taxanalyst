@@ -19,7 +19,7 @@ function en_tete($page)
 <!-- Les onglets -->
 <div id='entete'>
 	<div id ='intro'>
-	Application web pour la production de cartes en masse
+	Application web d'analyse des différentes versions de TAXREF
 	</div>
 	<div id ='onglet'>
 		<ul id='tabnav'>
