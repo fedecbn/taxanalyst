@@ -1,5 +1,0 @@
-SELECT distinct nom_complet_taxon_referentiel
-  FROM taxa.referentiel_taxo rt
-  INNER JOIN taxa.coor_taxon_reftaxo ctr ON rt.id_rattachement_referentiel = ctr.id_rattachement_referentiel
-WHERE nom_complet_taxon_referentiel IS NOT NULL
-ORDER BY nom_complet_taxon_referentiel

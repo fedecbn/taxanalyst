@@ -16,11 +16,11 @@
 **/
 
 //librairie utile
-require "en_tete.php";
+require "include/en_tete.php";
 ?>
 
 <html>
-	<?php include "head.html"; ?>
+	<?php include "html/head.html"; ?>
 	<body>
 		<?php 
 		en_tete("ptf_accueil");
@@ -31,10 +31,10 @@ require "en_tete.php";
 				Tableau de bord
 			</div>			
 		<?php
-		include ("form_accueil.html");
+		include ("html/form_accueil.html");
 		?>
 		</div>
 
 <?php
-include ("bottom.html");
+include ("html/bottom.html");
 ?>

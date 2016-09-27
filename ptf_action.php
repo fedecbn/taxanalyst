@@ -15,10 +15,10 @@
 **/
 
 //librairie utile
-require "en_tete.php";
+require "include/en_tete.php";
 ?>
 <html>
-<?php include "head.html"; 
+<?php include "html/head.html"; 
 en_tete("ptf_action");
 ?>
 
@@ -28,10 +28,10 @@ en_tete("ptf_action");
 	</div>
 	
 <?php
-include ("form_action.html");
+include ("html/form_action.html");
 ?>
 
 </div>
 <?php
-include ("bottom.html");
+include ("html/bottom.html");
 ?>

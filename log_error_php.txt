@@ -1,6 +1,0 @@
-
-[03-Jan-2014 14:37:20 UTC] PHP Fatal error:  Call to undefined function pg_connect() in C:\wamp\www\TaxRef_analyse\query_bdd.php on line 6
-[03-Jan-2014 14:37:20 UTC] PHP Stack trace:
-[03-Jan-2014 14:37:20 UTC] PHP   1. {main}() C:\wamp\www\TaxRef_analyse\ptf_accueil.php:0
-[03-Jan-2014 14:37:20 UTC] PHP   2. include() C:\wamp\www\TaxRef_analyse\ptf_accueil.php:39
-[03-Jan-2014 14:37:20 UTC] PHP   3. query_bdd() C:\wamp\www\TaxRef_analyse\form_accueil.html:36
